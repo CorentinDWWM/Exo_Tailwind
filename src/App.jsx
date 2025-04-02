@@ -50,9 +50,9 @@ function App() {
     setNewAdd(true);
   }
 
-  function suppNewLocation() {
-    setListings((prevListing) => prevListing.slice(0, -1));
-    setNewAdd(false);
+  function suppLocation(idParam) {
+    // console.log(idParam);
+    setListings(listings.filter((article) => article.id !== idParam));
   }
 
   // ici on rend tout nos composants pour afficher l'application
@@ -71,7 +71,6 @@ function App() {
         nbLike={nbLike}
         addNewLocation={addNewLocation}
         newAdd={newAdd}
-        suppNewLocation={suppNewLocation}
       />
       <div className="flex-grow">
         <SectionL
@@ -83,6 +82,7 @@ function App() {
           setNbLike={setNbLike}
           newLocation={newLocation}
           listings={listings}
+          suppLocation={suppLocation}
         />
         <SectionC />
       </div>

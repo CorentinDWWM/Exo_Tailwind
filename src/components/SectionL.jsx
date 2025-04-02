@@ -8,6 +8,7 @@ export default function SectionL({
   toggleAddLike,
   toggleDelLike,
   listings,
+  suppLocation,
 }) {
   // tableaux des différentes locations
   const [search, setSearch] = useState("");
@@ -52,6 +53,7 @@ export default function SectionL({
                     key={article.id}
                     darkMode={darkMode}
                     toggleAddLike={toggleAddLike}
+                    suppLocation={suppLocation}
                   />
                 ))}
             </div>
@@ -72,6 +74,7 @@ export default function SectionL({
                     key={article.id}
                     toggleAddLike={toggleAddLike}
                     toggleDelLike={toggleDelLike}
+                    suppLocation={suppLocation}
                   />
                 ))}
             </div>

@@ -11,7 +11,6 @@ export default function Header({
   nbLike,
   addNewLocation,
   newAdd,
-  suppNewLocation,
 }) {
   // composant pour le header
   return (
@@ -22,14 +21,7 @@ export default function Header({
           {nbLike >= 1 ? (
             <p className="font-semibold">Favoris : {nbLike}</p>
           ) : null}
-          {newAdd ? (
-            <a
-              onClick={suppNewLocation}
-              className="text-gray-600 hover:text-black cursor-pointer"
-            >
-              Supprimez la nouvelle location
-            </a>
-          ) : (
+          {newAdd ? null : (
             <a
               onClick={addNewLocation}
               className="text-gray-600 hover:text-black cursor-pointer"

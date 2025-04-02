@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
+import { FiMinus } from "react-icons/fi";
 
-export default function CardL({ article, toggleAddLike, toggleDelLike }) {
+export default function CardL({
+  article,
+  toggleAddLike,
+  toggleDelLike,
+  suppLocation,
+}) {
   // ici on rend une carte de location
   const [like, setLike] = useState(false);
 
@@ -32,11 +38,14 @@ export default function CardL({ article, toggleAddLike, toggleDelLike }) {
         <span className="text-red-500 font-semibold">
           {article.price} € / nuit
         </span>
-        {like === true ? (
-          <FaHeart onClick={handleLikeDel} />
-        ) : (
-          <CiHeart onClick={handleLikeAdd} />
-        )}
+        <div className="flex gap-2">
+          <FiMinus onClick={() => suppLocation(article.id)} />
+          {like === true ? (
+            <FaHeart onClick={handleLikeDel} />
+          ) : (
+            <CiHeart onClick={handleLikeAdd} />
+          )}
+        </div>
       </div>
     </div>
   );
